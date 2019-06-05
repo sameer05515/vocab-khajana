@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+	class="flex.messaging.services.RemotingService">
+	<adapters>
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+	<default-channels>
+		<channel ref="iagent-rtmp-A" />
+		<channel ref="iagent-rtmp-B" />
+
+
+	</default-channels>
+
+
+
+<destination id="MyStringAnalyzer">
+		<properties>
+			<source>com.prem.wishdb.MyStringAnalyzer</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="TestFile">
+
+	<properties>
+			<source>com.prem.wishdb.TestFile</source>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+	<!--<destination id="IAgentCore">
+		<properties>
+			<source>com.ist.agent.cti.rpc.IAgentCoreRPC</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+	<destination id="AdminRightsManagerRpc">
+		<properties>
+			<source>
+				com.ist.iagent.admin.rpc.AdminRightsManagerRpc
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+	<destination id="IAgentDBLogin">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.rpc.IAgentDBLogin
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="CampaignUser">
+		<properties>
+			<source>
+				com.ist.iagent.campaign.CampaignUserManagement
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="CampaignAdmin">
+		<properties>
+			<source>
+				com.ist.iagent.campaign.CampaignAdminManagement
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+
+	<destination id="CLIENT_MODULE_DESTINATION">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.rpc.ClientModuleListRPC
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+
+	<!--destination id="CTI_DATA_DESTINATION">
+		<properties>
+		<source>com.ist.iagent.admin.CTIData</source>
+		<scope>application</scope>
+		</properties>
+		<adapter ref="java-object"/>
+		</destination -->
+
+
+	<!--<destination id="GENERAL_INFORMATION_DESTINATION">
+		<properties>
+			<source>com.ist.iagent.gui.general.rpc.GIDataRPC</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="CallerDetailsRpc">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.rpc.CallerDetailsRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="Reflxon">
+		<properties>
+			<source>com.ist.iagent.common.rpc.CommonRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="IAGENT_ADMIN_DESTINATION">
+		<properties>
+			<source>com.ist.iagent.admin.rpc.IAgentAdminRPC</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+
+
+	<destination id="LAST_X_CALLS_DESTINATION">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.rpc.LastXCallsRPC
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="LOGGING_DESTINATION">
+		<properties>
+			<source>com.ist.iagent.gui.general.rpc.LoggerRpc</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+
+	<destination id="LicenseR">
+		<properties>
+			<source>com.ist.isuite.license.flex.LicenseRPC</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+	<!-- TICKETING TICKETING TICKETING TICKETING TICKETING TICKETING TICKETING -->
+
+	<!--<destination id="SiteRpc">
+		<properties>
+			<source>com.ist.isuite.iagent.ticketing.rpc.SiteRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="GroupRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.GroupRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="TicketRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.TicketRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="SitePropRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.SitePropRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+	<destination id="SlaValueRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.SlaValueRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="DynaFieldRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.DynaFieldRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="StatusRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.StatusRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="TicketHistoryRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.TicketHistoryRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="SeverityRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.ticketing.rpc.SeverityRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+<destination id="GroupUserRpc">
+ <properties>
+  <source>com.ist.isuite.iagent.ticketing.rpc.GroupUserRpc</source>
+  <scope>application</scope>
+ </properties>
+ <adapter ref="java-object"/>
+</destination>
+
+<destination id="BajGeneralRpc">
+  <properties>
+   <source>
+    com.ist.baj.rpc.BAJServiceRpc
+   </source>
+  </properties>
+  <adapter ref="java-object" />
+ </destination>-->
+
+	<!-- FINANCIAL PACKAGE -->
+
+	<!--<destination id="FPCallerDetailsRpc">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.FPCallerDetailsRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="PersonalBanking">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.PersonalBankingRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="CreditCard">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.CreditCardRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="DebitCard">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.DebitCardRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="Loan">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.LoanAccountRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="TabDetails">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.FPModuleDetailRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="FPLogger">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.FPLoggerRpc</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+	<!-- OkCards for BOJ-->
+	<!--<destination id="OkCards">
+		<properties>
+			<source>com.ist.boj.iagent.okcard.OkCardRpc</source>
+		</properties>
+	</destination>
+
+	<destination id="Deals">
+		<properties>
+			<source>com.ist.boj.iagent.bankdeal.DealsRpc</source>
+		</properties>
+	</destination>-->
+	<!-- -->
+
+	<!--<destination id="BackOffice">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.FPBackOfficeRpc</source>
+		</properties>
+	</destination>
+
+	<destination id="OnlineBackOffice">
+		<properties>
+			<source>
+				com.ist.boj.iagent.backoffice.BOJBackOfficeOnlineProcedureRpc
+			</source>
+		</properties>
+	</destination>
+
+	<destination id="CallTagging">
+		<properties>
+			<source>
+				com.ist.iagent.calltagging.rpc.CallTaggingRpc
+			</source>
+		</properties>
+	</destination>-->
+
+
+
+
+
+
+
+
+
+	<!--  destination for  FP Admin -->
+	<!--<destination id="FPAdminService">
+		<properties>
+			<source>com.ist.iagent.fp.admin.rpc.FPAdminRpc</source>
+
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+
+	<!-- Role & Rights destination -->
+
+	<!--<destination id="RoleRightsManagerRPC">
+		<properties>
+			<source>
+				com.ist.iagent.admin.rpc.RoleRightsManagerRPC
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+
+	<!--______________________KB__________________________________-->
+
+
+
+
+
+
+	<!--<destination id="getXML">
+		<properties>
+			<source>com.ist.kb.remote.category.CreateXMLRemote</source>
+			<scope>application</scope>
+		</properties>
+
+		<adapter ref="java-object" />
+
+
+	</destination>
+
+
+	<destination id="insertNode">
+		<properties>
+			<source>com.ist.kb.remote.category.InsertNodeRemote</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+
+	<destination id="deleteNode">
+		<properties>
+			<source>com.ist.kb.remote.category.DeleteNodeRemote</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+	<destination id="updateNode">
+		<properties>
+			<source>com.ist.kb.remote.category.UpdateNodeRemote</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+
+	<destination id="multipleSelectNode">
+		<properties>
+			<source>
+				com.ist.kb.remote.category.TreeMultipleSelectRemote
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+	<destination id="ArticlesRemote">
+		<properties>
+			<source>com.ist.kb.remote.article.ArticleRemote</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+
+	</destination>
+
+	<destination id="DocumentRemote">
+		<properties>
+			<source>com.ist.kb.remote.document.DocumentRemote</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+	<destination id="ClientInfoPlaceHolderRpc">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.rpc.ClientInfoPlaceHolderRpc
+			</source>
+			<scope>application</scope>
+		</properties>
+		<adapter ref="java-object" />
+
+	</destination>
+
+	<destination id="MESSAGE_REQUEST">
+		<properties>
+			<source>
+				com.ist.iagent.admin.handler.MessagingHandler
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+
+	<destination id="FOLLOWUP_DESTINATION">
+		<properties>
+			<source>
+				com.ist.iagent.gui.general.handler.FollowUpHandler
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="ClientRightsRpc">
+		<properties>
+			<source>com.ist.iagent.fp.rpc.ClientRightsRpc</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="SECUTITY_QUESTION_DESTINATION">
+		<properties>
+			<source>
+				com.ist.iagent.gui.security.SecurityQuestionHandler
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+	<!--destination id="AdminLoginServices">
+		<properties>
+		<source>com.ist.iagent.admin.dao.AdminUserRightsDAO</source>
+		</properties>
+		<adapter ref="java-object"/>
+		</destination -->
+
+
+	<!-- ___________WorkFlow RPC Entries_________________ -->
+
+	<!--<destination id="WorkflowUser">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.workflow.rpc.WorkflowUser
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="WorkflowAdmin">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.workflow.rpc.WorkflowAdmin
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+	<!-- ___________Survey RPC Entries_________________ -->
+
+	<!--<destination id="SurveyRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.survey.db.rpc.SurveyRpc
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>
+
+	<destination id="AdminSurveyRpc">
+		<properties>
+			<source>
+				com.ist.isuite.iagent.survey.db.rpc.AdminSurveyRpc
+			</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+	<!-- ______________________ Chat Rpc _________________________________________________ -->
+
+	<!--<destination id="ChatModuleRpc">
+		<properties>
+			<source>com.ist.iagent.chat.rpc.ChatModuleRpc</source>
+		</properties>
+		<adapter ref="java-object" />
+	</destination>-->
+
+
+
+</service>

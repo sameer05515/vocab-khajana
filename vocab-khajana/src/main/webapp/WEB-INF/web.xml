@@ -1,0 +1,212 @@
+<!DOCTYPE web-app
+	PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+	"http://java.sun.com/j2ee/dtds/web-app_2.3.dtd">
+
+<web-app>
+
+	<listener>
+		<listener-class>flex.messaging.HttpFlexSession</listener-class>
+		<!--<listener-class>com.prem.interview.util.servlet.CServletCtxLisener</listener-class>
+		<listener-class>com.ist.isuite.license.LicenseController</listener-class>-->
+	</listener>
+
+	<!--<context-param>
+		<param-name>PARAMETER_ENCODING</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>ISuiteServerIP1</param-name>
+        <param-value>10.6.241.45</param-value>
+    </context-param>
+
+    <context-param>
+		<param-name>ISuiteServerPort1</param-name>
+        <param-value>55080</param-value>
+    </context-param>-->
+	
+	<servlet>
+		<servlet-name>MessageBrokerServlet</servlet-name>
+		<display-name>MessageBrokerServlet</display-name>
+		<servlet-class>
+			flex.messaging.MessageBrokerServlet
+		</servlet-class>
+
+		<init-param>
+			<param-name>services.configuration.file</param-name>
+			<param-value>/WEB-INF/services-config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<!--
+	<servlet>
+		<servlet-name>
+		QuestionAnswerDisplayer
+		</servlet-name>
+		<servlet-class>
+				com.prem.interview.util.servlet.QuestionAnswerDisplayer
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>QuestionAnswerDisplayer</servlet-name>
+		<url-pattern>/QuestionAnswerDisplayer/*</url-pattern>
+	</servlet-mapping>
+	-->	
+	
+	<!--
+	<servlet>
+		<servlet-name>
+		FileWriter
+		</servlet-name>
+		<servlet-class>
+				com.prem.wishdb.FileWriter
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileWriter</servlet-name>
+		<url-pattern>/fileWriter/*</url-pattern>
+	</servlet-mapping>
+	-->
+	
+	
+	
+	
+	
+	
+	
+    <!--<servlet>
+		<servlet-name>SMSSenderInitializer</servlet-name>
+			<servlet-class>
+				com.ist.baj.util.SMSSenderInitializer
+			</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MessageBrokerServlet</servlet-name>
+		<url-pattern>/messagebroker/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Initializer</servlet-name>
+		<servlet-class>com.ist.iagent.common.init.InitializerServlet</servlet-class>
+		<init-param>
+			<param-name>iagent.property.file</param-name>
+			<param-value>/conf/iagent.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>iagent.config.xml</param-name>
+			<param-value>xml/iagent-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>iagent.admin.config.xml</param-name>
+			<param-value>xml/admin-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ticketing.property.file</param-name>
+			<param-value>/conf/ticketing.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ticketing.default.property.file</param-name>
+			<param-value>/conf/default-properties.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>-->
+	
+	
+
+
+
+<!-- entries for Ticketing Module (remove if not plugged into IAgent) -->
+	<!--servlet>
+		<servlet-name>TicketModuleInitializer</servlet-name>
+		<servlet-class>com.ist.tms.servlets.TicketModuleInitializer</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet -->
+
+	<!-- servlet>
+		<servlet-name>EditTicketServlet</servlet-name>
+		<servlet-class>com.ist.tms.servlets.EditTicketServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditTicketServlet</servlet-name>
+		<url-pattern>/editticket/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FileDownload</servlet-name>
+		<servlet-class>com.ist.tms.servlets.FileDownload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileDownload</servlet-name>
+		<url-pattern>/download/*</url-pattern>
+	</servlet-mapping -->
+
+	
+	
+
+
+<!--   entries for knowledge base module (remove if not plugged into IAgent) -->
+	<!--<servlet>
+		<servlet-name>KBInitializer</servlet-name>
+			<servlet-class>
+				com.ist.kb.init.KBInitializer
+			</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileUploader</servlet-name>
+			<servlet-class>
+				com.ist.kb.remote.document.FileUploader
+			</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileUploader</servlet-name>
+		<url-pattern>/fileUpLoad/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FileWriter</servlet-name>
+			<servlet-class>
+				com.ist.kb.remote.document.FileWriter
+			</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>FileWriter</servlet-name>
+			<url-pattern>/fileWriter/*</url-pattern>
+		</servlet-mapping>
+		<servlet>
+		<servlet-name>TicketPrinter</servlet-name>
+			<servlet-class>
+				com.ist.isuite.iagent.ticketing.ut.TicketPrinter
+			</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>TicketPrinter</servlet-name>
+			<url-pattern>/ticketPrinter/*</url-pattern>
+		</servlet-mapping>
+
+		<servlet>
+		<servlet-name>TicketDocumentPrinter</servlet-name>
+			<servlet-class>
+				com.ist.isuite.iagent.ticketing.ut.TicketDocumentPrinter
+			</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>TicketDocumentPrinter</servlet-name>
+			<url-pattern>/ticketdocPrinter/*</url-pattern>
+		</servlet-mapping>-->
+
+		
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>

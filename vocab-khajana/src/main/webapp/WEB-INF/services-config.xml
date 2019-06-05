@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services-config>
+
+    <services>
+        
+        <service-include file-path="remote-config.xml" />        
+        <service-include file-path="messaging-config.xml" />
+
+	</services>
+
+	
+
+
+    <channels>
+    <channel-definition id="iagent-rtmp-A" class="mx.messaging.channels.RTMPChannel">
+			<endpoint url="rtmp://localhost:2036" class="flex.messaging.endpoints.RTMPEndpoint"/>
+            <properties>
+                <idle-timeout-minutes>0</idle-timeout-minutes>
+
+            </properties>
+        </channel-definition>
+ 	<channel-definition id="iagent-rtmp-B" class="mx.messaging.channels.RTMPChannel">
+			<endpoint url="rtmp://localhost:2037" class="flex.messaging.endpoints.RTMPEndpoint"/>
+            <properties>
+                <idle-timeout-minutes>0</idle-timeout-minutes>
+
+            </properties>
+        </channel-definition>
+
+</channels>
+
+    <logging>
+        <!-- You may also use flex.messaging.log.ServletLogTarget -->
+        <target class="flex.messaging.log.ConsoleTarget" level="info">
+            <properties>
+                <prefix>[LCD] </prefix>
+                <includeDate>false</includeDate>
+                <includeTime>true</includeTime>
+                <includeLevel>true</includeLevel>
+                <includeCategory>false</includeCategory>
+            </properties>
+            <filters>
+                <pattern>Endpoint.*</pattern>
+                <pattern>Service.*</pattern>
+                <pattern>Configuration</pattern>
+            </filters>
+        </target>
+    </logging>
+
+    <system>
+        <redeploy>
+            <enabled>true</enabled>
+            <watch-interval>20</watch-interval>
+            <watch-file>{context.root}/WEB-INF/services-config.xml</watch-file>
+            <watch-file>{context.root}/WEB-INF/messaging-config.xml</watch-file>            
+            <touch-file>{context.root}/WEB-INF/web.xml</touch-file>
+        </redeploy>
+    </system>
+
+</services-config>

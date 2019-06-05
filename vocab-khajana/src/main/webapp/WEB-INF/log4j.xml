@@ -1,0 +1,333 @@
+<?xml version="1.0"	encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- ======================================================================	-->
+<!--																		-->
+<!--  Log4j	Configuration													-->
+<!--																		-->
+<!-- ======================================================================	-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+  debug="false">
+  
+  <!-- ================================================================== -->
+  <!--	 The Console Appender.											  -->
+  <!-- ================================================================== -->
+	<appender	name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<param name="Threshold"	value="debug"/>
+		<param name="Encoding" value="UTF-8"/>
+	
+		<layout	class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+			value="%d{ABSOLUTE}	%-5p [%c{1}]  %m%n"
+			/>
+		</layout>
+	 </appender>
+
+	<!--
+	<appender name="iagent_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/iagent/WEB-INF/logs/iagent.log"/>
+		 <param	name="Append" value="false"/>
+		<param name="threshold"	value="debug"/>
+		<layout	class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d (Client-%x.) %5p %c{1}:%L	- %m%n"	/>
+		</layout>
+	</appender>
+
+	<appender name="ticketing_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/iagent/WEB-INF/logs/ticketing.log"/>
+		 <param	name="Append" value="false"/>
+		<param name="threshold"	value="debug"/>
+		<layout	class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d (Client-%x.) %5p %c{1}:%L	- %m%n"	/>
+		</layout>
+	</appender>
+	
+	<appender name="workflow_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/iagent/WEB-INF/logs/workflow.log"/>
+		 <param	name="Append" value="false"/>
+		<param name="threshold"	value="debug"/>
+		<layout	class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d (Client-%x.) %5p %c{1}:%L	- %m%n"	/>
+		</layout>
+	</appender>
+
+  
+	<appender name="license_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/iagent/WEB-INF/logs/license.log" />
+		<param name="threshold"	value="debug"/>
+		<layout	class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d -	%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="kb_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/iagent/WEB-INF/logs/kb.log" />
+		<param name="threshold" value="debug"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d - %m%n" />
+		</layout>
+	</appender>
+	-->
+	
+	<appender name="interview_logger"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="5024KB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="../webapps/project-ticketing/WEB-INF/logs/interview.log" />
+		<param name="threshold" value="debug"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d - %m%n" />
+		</layout>
+	</appender>
+
+	<!--appender name="MANUAL_LOAD_LOGS" class="org.apache.log4j.jdbcplus.JDBCAppender">
+		<param name="dbclass" value="net.sourceforge.jtds.jdbc.Driver" />
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+		<param name="sql" value="INSERT INTO MANUAL_LOAD_LOGS (manual_id,callId,agentId,customerid,load_at) VALUES (
+		'@MDC:manual_Id@','@MDC:callId@','@MDC:agentId@','@MDC:customerNumber@','@MDC:load_at@')" />
+		<param name="layoutPartsDelimiter" value="#" />
+		<param name="buffer" value="1" />
+		<param name="commit" value="true" />
+		<param name="quoteReplace" value="true " />
+		<param name="throwableMaxChars" value="3000" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}" />
+		</layout>
+	</appender>
+
+	<appender name="MANUAL_LOAD_UPDATE_LOGS" class="org.apache.log4j.jdbcplus.JDBCAppender">
+		<param name="dbclass" value="net.sourceforge.jtds.jdbc.Driver" />
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+		<param name="sql" value="UPDATE MANUAL_LOAD_LOGS SET unload_at = (to_timestamp('@MDC:unload_at@', 'yyyy/mm/dd hh24:mi:ss.ff3')) WHERE callId=('@MDC:callId@')"/>
+		<param name="layoutPartsDelimiter" value="#" />
+		<param name="buffer" value="1" />
+		<param name="commit" value="true" />
+		<param name="quoteReplace" value="true " />
+		<param name="throwableMaxChars" value="3000" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}" />
+		</layout>
+	</appender>
+
+	<appender name="CALL_LOGS_SAVE" class="org.apache.log4j.jdbcplus.JDBCAppender">
+   
+		<param name="dbclass" value="oracle.jdbc.driver.OracleDriver"/>
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+   
+		<param name="sql" value="INSERT INTO CALL_LOGS
+		(ID,AGENT_ID,CALL_ID,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,DN,ANI,START_TIME,EXTENSION) VALUES (
+		'@MDC:ID@','@MDC:AGENT_ID@','@MDC:CALL_ID@','@MDC:VAR1@','@MDC:VAR2@','@MDC:VAR3@','@MDC:VAR4@','@MDC:VAR5@','@MDC:VAR6@','@MDC:VAR7@','@MDC:VAR8@',
+		'@MDC:VAR9@','@MDC:VAR10@','@MDC:DN@','@MDC:ANI@',to_timestamp('@MDC:START_TIME@', 'yyyy/mm/dd hh24:mi:ss.ff3'),'@MDC:EXTENSION@')" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}" />
+		</layout>
+	</appender>
+
+	<appender name="CALL_LOGS_SAVE_MYSQL" class="org.apache.log4j.jdbcplus.JDBCAppender">
+   
+		<param name="dbclass" value="oracle.jdbc.driver.OracleDriver"/>
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+   
+		<param name="sql" value="INSERT INTO CALL_LOGS
+		(ID,AGENT_ID,CALL_ID,VAR1,VAR2,VAR3,VAR4,VAR5,VAR6,VAR7,VAR8,VAR9,VAR10,DN,ANI,START_TIME,EXTENSION) VALUES (
+		'@MDC:ID@','@MDC:AGENT_ID@','@MDC:CALL_ID@','@MDC:VAR1@','@MDC:VAR2@','@MDC:VAR3@','@MDC:VAR4@','@MDC:VAR5@','@MDC:VAR6@','@MDC:VAR7@','@MDC:VAR8@',
+		'@MDC:VAR9@','@MDC:VAR10@','@MDC:DN@','@MDC:ANI@','@MDC:START_TIME@','@MDC:EXTENSION@')" />
+		
+	</appender>
+
+
+	<appender name="CALL_LOGS_UPDATE" class="org.apache.log4j.jdbcplus.JDBCAppender">
+		<param name="dbclass" value="oracle.jdbc.driver.OracleDriver"/>
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+
+		<param name="sql" value="UPDATE CALL_LOGS SET END_TIME = (to_timestamp('@MDC:END_TIME@', 'yyyy/mm/dd hh24:mi:ss.ff3')) WHERE ID=('@MDC:ID@')"/>
+	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}" />
+		</layout>
+	</appender>
+
+	<appender name="CALL_LOGS_UPDATE_MYSQL" class="org.apache.log4j.jdbcplus.JDBCAppender">
+		<param name="dbclass" value="oracle.jdbc.driver.OracleDriver"/>
+		<param name="connector" value="com.ist.iagent.logging.CallLoggerDBAppender" />
+		<param name="sql" value="UPDATE CALL_LOGS SET END_TIME = '@MDC:END_TIME@' WHERE ID=('@MDC:ID@')"/>
+	</appender>
+	
+	<appender name="backend_expection"
+		class="org.apache.log4j.jdbcplus.JDBCAppender">
+		<param name="dbclass" value="net.sourceforge.jtds.jdbc.Driver" />
+		<param name="connector"
+			value="com.ist.iagent.logging.CallLoggerDBAppender" />
+		<param name="sql"
+			value="INSERT INTO backend_expection_Log
+           (callId,customerId,service,channel,code,request,response,request_time,response_time)
+     VALUES   (
+		'@MDC:CALL_ID@','@MDC:CUSTOMER_ID@','@MDC:SERVICE@','@MDC:CHANNEL@','@MDC:CODE@','@MDC:REQUEST@','@MDC:RESPONSE@','@MDC:REQUEST_TIME@',
+		'@MDC:RESPONSE_TIME@')" />
+		<param name="layoutPartsDelimiter" value="#" />
+		<param name="buffer" value="1" />
+		<param name="commit" value="true" />
+		<param name="quoteReplace" value="true " />
+		<param name="throwableMaxChars" value="3000" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MM-dd HH:mm:ss}" />
+		</layout>
+	</appender-->
+
+  <!--logger name="com.mchange">
+	<level value="error"/>
+	<appender-ref ref="iagent_logger" />
+	<appender-ref ref="CONSOLE"	/>
+  </logger>
+  
+  <logger name="org.apache">
+	<level value="info"/>
+	<appender-ref ref="iagent_logger" />
+	<appender-ref ref="CONSOLE"	/>
+  </logger>
+
+  <logger name="com.ist.isuite.license">
+	<level value="debug"/>
+		<appender-ref ref="license_logger" />
+  </logger>
+
+  <logger name="com.ist.iagent">
+	<level value="debug"/>
+		<appender-ref ref="iagent_logger" />
+		<appender-ref ref="CONSOLE"	/>
+  </logger>
+
+ <logger name="com.ist.cti">
+	<level value="debug"/>
+		<appender-ref ref="iagent_logger" />
+  </logger-->
+ 
+ <logger name="org.hibernate.tool.hbm2ddl">
+	<level value="info"/>
+		<appender-ref ref="interview_logger" />
+		<appender-ref ref="CONSOLE"	/> 
+ </logger>													 
+
+  <logger name="org.hibernate">
+	<level value="warn"/>
+		<appender-ref ref="interview_logger" />
+		<appender-ref ref="CONSOLE"	/>
+  </logger>
+
+  <!--logger name="com.ist.isuite.iagent.workflow">
+	<level value="debug"/>
+		<appender-ref ref="workflow_logger" />
+		<appender-ref ref="CONSOLE"	/>
+  </logger>
+
+  <logger name="com.ist.isuite.iagent.ticketing">
+	<level value="debug"/>
+		<appender-ref ref="ticketing_logger" />
+		<appender-ref ref="CONSOLE"	/>
+  </logger>
+ 
+ <logger name="com.ist.kb">
+    <level value="debug"/>
+		<appender-ref ref="kb_logger" />
+		<appender-ref ref="CONSOLE" />
+  </logger-->
+  
+  <logger name="com.prem.interview.util">
+    <level value="debug"/>
+		<appender-ref ref="interview_logger" />
+		<appender-ref ref="CONSOLE" />
+  </logger>
+
+ <!--logger name="call_log" additivity="false">
+   <level value="debug"/>
+   <appender-ref ref="CALL_LOGS_SAVE"/>
+</logger>
+
+<logger name="call_log_mysql" additivity="false">
+   <level value="debug"/>
+   <appender-ref ref="CALL_LOGS_SAVE_MYSQL"/>
+</logger>
+
+ <logger name="call_log_update_mysql" additivity="false">
+   <level value="debug"/>
+   <appender-ref ref="CALL_LOGS_UPDATE_MYSQL"/>
+ </logger-->
+
+  <!--
+  <category name="manual_load">
+		<priority value="debug" />
+		<appender-ref ref="MANUAL_LOAD_LOGS"/>
+	</category>
+
+	<category name="manual_load_update">
+		<priority value="debug" />
+		<appender-ref ref="MANUAL_LOAD_UPDATE_LOGS"/>
+	</category>
+	
+	<category name="backend_logger">
+		<priority value="debug" />
+		<appender-ref ref="backend_expection" />
+	</category>
+  -->
+
+
+  
+  <!-- ================================================================== -->
+  <!--	 Setup the Root	category.										  -->
+  <!-- ================================================================== -->
+  <root>
+	<!-- 
+	  This level element or	an appropriate logger element declaration is important.	
+	  The logger element with a	nested level element, or this level	element	declaration
+	  in lieu of a logger level	declaration	establishes	the	level for the logger.
+	  The Logger level is important	for	tests like logger.isDebugEnabled().	If a level 
+	  is not set for the logger	then by	default	it will	return true.
+	  Don't	confuse	a logger level with	a Threshold	or similar parameter for an	appender.
+	  Such parameters only come	into play after	the	log	level has been evaluated. 
+	-->
+	<level value="debug"/>
+	
+	<appender-ref ref="CONSOLE"/>
+
+	 <appender-ref ref="file"/>
+	
+	<!--
+	  Uncomment	this if	you	want to	use	some form of call logging to 
+	  a	database, e.g. for the sample application.
+	  <appender-ref	ref="LogDBMS"/>
+	  
+	-->
+	
+	
+	<!--appender-ref ref="ASYNC"/-->
+  </root>
+
+  
+
+  
+</log4j:configuration>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="message-service" class="flex.messaging.services.MessageService">
+
+    <adapters>
+        <adapter-definition id="actionscript" class="flex.messaging.services.messaging.adapters.ActionScriptAdapter" default="true" />
+        <adapter-definition id="jms" class="flex.messaging.services.messaging.adapters.JMSAdapter"  />
+    </adapters>
+    
+
+  <default-channels>
+	<channel ref="iagent-rtmp-A"/>
+		<channel ref="iagent-rtmp-B"/>
+		
+    </default-channels> 
+
+    <destination id="LicenseE"/>
+
+	<destination id="SUPERVISOR_AGENT_MESSAGE_PROMPT_QUEUE"/>
+  <destination id="MESSAGE-QUE"/>
+
+
+
+      <destination id="GeneralMessage">
+      </destination>
+
+
+      <destination id="ButtonState">
+      </destination>
+
+      <destination id="ErrorMessage">
+      </destination>
+      
+	<destination id="AgentStatsMessage">
+
+      </destination>
+
+	<destination id="SGStatsMessage">
+      </destination>
+      
+       <destination id="agentListMessage">
+      </destination>
+
+	  <destination id="chatMessage">
+      </destination>
+      
+
+
+</service>
