@@ -6,12 +6,12 @@
 	<artifactId>com.p.gui</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>bce-gui</name>
-	<description>Merging of topic-mgmt, interview-mgmt, word-meaning UI</description>
+	<name>vocab-khajana</name>
+	<description>vocab-khajana</description>
 
 
 	<build>
-		<finalName>bce-gui</finalName>
+		<finalName>vocab-khajana</finalName>
 		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
